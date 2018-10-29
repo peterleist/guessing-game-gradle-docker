@@ -1,13 +1,15 @@
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 
-public class Main{
-    public static void main(String args[]) throws NullPointerException, IOException {
-       Node root = null;
-        
-        root = Serialize.deSer();
-        root.run();
-        Serialize.Ser(root);
-   
-
-    }
+public class Main {
+	public static void main(String[] args) throws IOException, InterruptedException {
+	
+		Controller mc = new Controller();
+		//System.out.println("Hello");
+		 mc.printSolution();
+			
+	}	
 }

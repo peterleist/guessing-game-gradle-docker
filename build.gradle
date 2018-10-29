@@ -13,6 +13,26 @@ dependencies{
 	testRuntime('org.junit.jupiter:junit-jupiter-engine:5.3.1')
 }
 
+sourceSets{
+    main.java.srcDir "src/main"
+    test.java.srcDir "src/test"
+}
+
+repositories{
+    mavenCentral()
+    jcenter()
+}
+
+
+
+jar{
+    manifest {
+        attributes 'Main-Class' : 'Main' 
+    }
+}
+
+
+/*
 jacoco {
     toolVersion = "0.8.1"
     reportsDir = file("$buildDir/customJacocoReportDir")
@@ -53,23 +73,7 @@ task applicationCodeCoverageReport(type:JacocoReport){
     sourceSets sourceSets.main
 }
 
-sourceSets{
-    main.java.srcDir "src/main"
-    test.java.srcDir "src/test"
-}
 
-repositories{
-    mavenCentral()
-    jcenter()
-}
-
-
-
-jar{
-    manifest {
-        attributes 'Main-Class' : 'Main' 
-    }
-}
 
 test {
     useJUnitPlatform()
@@ -91,4 +95,4 @@ test {
      logger.lifecycle("Test: " + descriptor + " produced standard out/err: " + event.message )
   }
 }
-buildScan { termsOfServiceUrl = 'https://gradle.com/terms-of-service'; termsOfServiceAgree = 'yes' }
+*/
